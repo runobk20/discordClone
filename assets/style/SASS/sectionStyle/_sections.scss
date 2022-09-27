@@ -1,0 +1,148 @@
+@use '../generalStyle/fonts';
+@use '../generalStyle/mixins' as m;
+@use '../generalStyle/variables' as v;
+
+// Sections classes
+
+.section-separator {
+    padding: 50px 25px;
+}
+
+.sub-heading {
+    font-family: 'Ginto';
+    font-size: clamp(20px, 4vw, 40px);
+    color: v.$not-so-black;
+}
+
+
+.m-top-25 {
+    margin-top: 25px;
+}
+
+.secondary-background {
+    background-color: v.$secondary-background;
+}
+
+// Section Media Queries
+
+@media screen and (min-width: 768px) {
+    #section-two, #section-three, #section-fourth {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 20px;
+        align-items: center;
+
+        .section-image {
+            grid-column: 1/5;
+        }
+
+        .section-content {
+            grid-column: 5/9;
+
+            p {
+                line-height: 32px;
+            }
+        }
+    }
+
+    #section-three {
+        .section-image {
+            grid-column: 5/9;
+        }
+
+        .section-content {
+            grid-column: 1/5;
+        }
+    }
+
+    .section-separator {
+        padding: 80px 24px;
+    }
+
+    .sub-heading {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .section-separator {
+        padding: 120px 25px;
+    }
+
+    #section-two, #section-three, #section-fourth {
+        grid-template-columns: repeat(12, 1fr);
+
+        .section-image {
+            grid-column: 1/7;
+        }
+
+        .section-content {
+            grid-column: 9/13;
+        }
+    }
+
+    #section-three {
+        .section-image {
+            grid-column: 6/13;
+        }
+
+        .section-content {
+            grid-column: 1/5;
+        }
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    .section-image {
+        img {
+            max-width: initial;
+        }
+    }
+}
+
+.reliable-heading {
+    font-family: 'Ginto Nord';
+    font-size: clamp(20px, 4vw, 40px);
+    color: v.$not-so-black;
+}
+
+@media screen and (min-width: 768px) {
+    .reliable-heading, #end-section p {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #end-section {
+        padding: 120px 25px 80px;
+        div:first-child {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr 1fr;
+            row-gap: 20px;
+    
+            h2 {
+                grid-column: 1/13;
+            }
+    
+            p {
+                grid-column: 2/12;
+                margin-top: 0px;
+            }
+        }
+
+        div:last-child {
+            display: flex;
+            justify-content: center;
+            
+            img {
+                width: -webkit-fill-available;
+                width: -moz-available;
+            }
+        }
+    }
+
+}

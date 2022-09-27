@@ -1,0 +1,251 @@
+@use '../generalStyle/fonts';
+@use '../generalStyle/mixins' as m;
+@use '../generalStyle/variables' as v;
+
+// Hero
+
+#hero {
+    width: 100%;
+    background-color: v.$primary-color;
+}
+
+// Hero content
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 55px 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+}
+
+#hero-text {
+    grid-column: 1/5;
+
+    h1 {
+        font-family: v.$important-heading-font;
+        font-size: clamp(25px, 5vw, 44px);
+        color: white;
+    }
+
+    p {
+        color: white;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 25px;
+    }
+}
+
+#hero-buttons {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    
+    .download-button {
+        display: flex;
+        margin-top: 25px;
+        margin-right: 25px;
+        justify-content: space-around;
+        align-items: center;
+
+        @include m.button(white, v.$not-so-black, 16px 32px, 20px, 300px);
+        height: auto;
+
+        #download-icon {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+        }
+    }
+
+    .download-button:hover {
+        @include m.shadow-box(lighten($color: v.$not-so-black, $amount: 25));
+        
+        a {
+            text-decoration: none;
+            color: v.$hoovered-font;
+            transition: .5s;
+        }
+    }
+
+    button {
+        @include m.button(v.$not-so-black, white, 16px 32px, 19px, 330px);
+        height: auto;
+        line-height: 20px;
+        margin-top: 25px;
+    }
+
+    button:hover {
+        @include m.shadow-box(black);
+        background-color: v.$btn-black-hover;
+        color: white;
+    }
+}
+
+// Hero background
+
+.hero-banner {
+    position: relative;
+    width: 95%;
+
+    #hero-banner__background, #hero-banner__right {
+        display: none;
+    }
+
+    #hero-banner__left {
+        margin-left: -80px;
+    }
+}
+
+// Hero Responsive Queries
+
+@media screen and (min-width: 682px) {
+    #hero-buttons {
+        grid-column: 1/5;
+        flex-direction: row;
+    }
+
+    .hero-banner {
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        padding-bottom: 80px;
+    }
+
+    #hero {
+        position: relative;
+    }
+
+    #hero > header {
+        padding: 20px 40px;
+    }
+
+    .hero-content {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 20px;
+        padding: 80px 40px;
+    }
+
+    #hero-text {
+        grid-column: 1/6;
+
+        h1 {
+            font-size: 56px;
+            line-height: 56px;
+        }
+
+        p {
+            margin-top: 40px;
+            font-size: clamp(16px, 2vw, 20px);
+        }
+    }
+
+    #hero-buttons {
+        flex-direction: column;
+
+        button, .download-button {
+            font-size: 20px;
+            height: 55px;
+        }
+    }
+
+    .hero-banner {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        #hero-banner__left {
+            display: none;
+        }
+
+        #hero-banner__right {
+            display: block;
+            position: absolute;
+            width: 80%;
+            max-width: 615px;
+            max-height: 360px;
+            bottom: 0;
+            left: 50%;
+            margin-left: -55px;
+        }
+
+        #hero-banner__background {
+            display: block;
+            max-width: min-content;
+            margin-left: -1320px;
+
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .hero-content {
+        padding: 120px 24px;
+        grid-template-columns: repeat(12, 1fr);
+
+        #hero-text {
+            grid-column: 3/11;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: .4fr 1fr;
+            text-align: center;
+
+            p {
+                grid-row: 2/3;
+                line-height: 1.6;
+            }
+
+        }
+
+        #hero-buttons {
+            flex-direction: row;
+            justify-content: center;
+            grid-column: 3/11;
+
+            .download-button {
+                margin: 25px 25px 0 25px;
+            }
+
+            button {
+                font-size: 18.5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Hero banner Media
+
+@media screen and (min-width: 1024px) {
+    main {
+        max-height: 626px;
+        .hero-banner {
+    
+            #hero-banner__left {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -1030px;
+                max-width: none;
+            }
+    
+            #hero-banner__right {
+                margin-left: 365px;
+            }
+        }
+    }
+}

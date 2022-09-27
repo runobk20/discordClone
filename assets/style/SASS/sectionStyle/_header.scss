@@ -1,0 +1,104 @@
+@use '../generalStyle/fonts';
+@use '../generalStyle/mixins' as m;
+@use '../generalStyle/variables' as v;
+
+#hero > header {
+    padding: 25px;
+    .navContainer {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        width: 360px;
+    }
+
+
+    #header-nav {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+        display: inline-grid;
+        grid-template-columns: 1fr 2fr 1fr;
+
+        a:first-child {
+            align-self: center;
+        }
+
+        a > #discord-logo {
+            width: 8rem;
+            height: auto;
+        }
+    
+        #login {
+            grid-column: 3/4;
+            @include m.button();
+            font-size: 13px;
+            line-height: 22px;
+        }
+
+        #login:hover {
+            @include m.shadow-box(lighten($color: v.$not-so-black, $amount: 25));
+        }
+
+        div {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            grid-column: 3/4;
+        }
+    
+        #hamburger-menu {
+            filter: v.$svg-to-white;
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-left: 20px;
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    #hero > header {
+        .navContainer {
+            position: initial;
+            grid-column: 2/3;
+            align-self: center;
+            width: fit-content;
+        }
+    }
+
+    #hero header {
+        padding: 0 24px;
+        height: 80px;
+
+        position: relative;
+        z-index: 100;
+
+        #header-nav {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+                color: white;
+                margin: 0 10px;
+            }
+        }
+
+        .container {
+            height: 100%;
+
+            div > #hamburger-menu {
+                display: none;
+            }
+        } 
+    }    
+}
