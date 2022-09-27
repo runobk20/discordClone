@@ -63,12 +63,6 @@
   font-weight: 700;
   src: url(https://cdn.jsdelivr.net/gh/ROMVoid95/DiscordFonts@master/Ginto-Nord/Ginto-Nord-700.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/ROMVoid95/DiscordFonts@master/Ginto-Nord/Ginto-Nord-700.woff) format("woff");
 }
-@font-face {
-  font-family: "WebSymbols-Regular";
-  src: url("/assets/style/fonts/WebSymbols-Regular.eot") format("eot"), url("/assets/style/fonts/WebSymbols-Regular.woff") format("woff"), url("/assets/style/fonts/WebSymbols-Regular.ttf") format("truetype"), url("/assets/style/fonts/WebSymbols-Regular.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 html {
   box-sizing: border-box;
 }
@@ -118,6 +112,17 @@ img {
   }
 }
 
+.observer-item {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.observer-item.show {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s;
+}
+
 #hero {
   width: 100%;
   background-color: #404EED;
@@ -125,6 +130,13 @@ img {
 
 #hero > header {
   padding: 25px;
+}
+#hero > header .navContainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 360px;
 }
 #hero > header nav {
   display: none;

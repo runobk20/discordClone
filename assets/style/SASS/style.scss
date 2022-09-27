@@ -90,6 +90,19 @@ img {
             transition: .5s;
 }
 
+// Observer extra classes
+
+.observer-item {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.observer-item.show {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1s;
+}
+
 // Hero
 
 #hero {
@@ -101,6 +114,16 @@ img {
 
 #hero > header {
     padding: 25px;
+    .navContainer {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+        width: 360px;
+    }
+
+
     nav {
         display: none;
     }
