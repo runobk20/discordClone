@@ -65,31 +65,21 @@
 }
 #hero > header {
   padding: 25px;
-}
-#hero > header .navContainer {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  position: relative;
   z-index: 100;
-  width: 360px;
 }
-#hero > header #header-nav {
-  display: none;
-}
-#hero > header .container {
+
+.container {
   width: 100%;
   display: inline-grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
-#hero > header .container a:first-child {
-  align-self: center;
-}
-#hero > header .container a > #discord-logo {
+.container a > #discord-logo {
   width: 8rem;
   height: auto;
+  align-self: center;
 }
-#hero > header .container #login {
+.container #login {
   grid-column: 3/4;
   width: auto;
   background-color: white;
@@ -104,19 +94,19 @@
   font-size: 13px;
   line-height: 22px;
 }
-#hero > header .container #login:hover {
+.container #login:hover {
   text-decoration: none;
   box-shadow: 1px 2px 5px #5d6870;
   color: #5D6BE8;
   transition: 0.5s;
 }
-#hero > header .container div {
+.container #header-login__button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   grid-column: 3/4;
 }
-#hero > header .container #hamburger-menu {
+.container #hamburger-menu {
   filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(134deg) brightness(200%) contrast(101%);
   width: 1.6rem;
   height: 1.6rem;
@@ -124,17 +114,9 @@
 }
 
 @media screen and (min-width: 1024px) {
-  #hero > header .navContainer {
-    position: initial;
-    grid-column: 2/3;
-    align-self: center;
-    width: fit-content;
-  }
   #hero header {
     padding: 0 24px;
     height: 80px;
-    position: relative;
-    z-index: 100;
   }
   #hero header #header-nav {
     display: flex;
@@ -152,8 +134,116 @@
   #hero header .container {
     height: 100%;
   }
-  #hero header .container div > #hamburger-menu {
+  #hero header .container #header-login__button > #hamburger-menu {
     display: none;
+  }
+  #hero > header .navContainer {
+    position: initial;
+    grid-column: 2/3;
+    align-self: center;
+    width: fit-content;
+  }
+}
+.mobile-wrapper {
+  padding: 24px;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.mobile-discordLogo {
+  width: 8rem;
+  height: auto;
+}
+
+.mobileNav-separator {
+  margin: 24px 0 16px 0;
+  height: 2px;
+  width: 100%;
+  background: #ebedef;
+}
+
+.mobile-navItem {
+  display: none;
+}
+
+.mobile-navItem.show {
+  display: block;
+}
+
+.mobile-navItem.show.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileNav-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  background-color: #5865F2;
+  color: white;
+  border: none;
+  height: 38px;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 35px;
+  height: auto;
+  color: white;
+}
+.mobileNav-download a {
+  color: white;
+  text-decoration: none;
+}
+.mobileNav-download img {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 10px;
+  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(134deg) brightness(200%) contrast(101%);
+}
+
+.mobile-navFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mobile-wrapper {
+  padding: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .navContainer.show {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    width: 330px;
+    padding: 25px 50px 120px 25px;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .navContainer.show #header-nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .navContainer.show #header-nav a {
+    display: inline;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  .nav-arrow {
+    display: none;
+    font-size: 18px;
   }
 }
 #hero {

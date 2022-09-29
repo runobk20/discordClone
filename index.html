@@ -9,26 +9,45 @@
     <link rel="stylesheet" type="text/css" href="assets/style/style.css">
     <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon"> 
     <script src="./assets/scripts/observerApp.js" defer></script>
+    <script src="./assets/scripts/mobileNavApp.js" defer></script>
 </head>
 
 <body>
     <main id="hero">
         <header class="max-width-desktop">
             <div class="container">
-                <a href="index.html"><img id="discord-logo" src="./assets/img/discord-logo.png" alt="discord logo"></a>
+                <a href="index.html"><img id="discord-logo" src="./assets/img/discord-logo.svg" alt="discord logo"></a>
                 <span class="navContainer">
-                    <nav id="header-nav">
+                    <div class="mobile-navItem">
+                        <div class="mobile-navItem d-flex">
+                            <a class="mobile-navItem" href="index.html">
+                                <img class="mobile-discordLogo" src="./assets/img/discord-logo-black.svg" alt="discord logo">
+                            </a>
+                            <img src="./assets/img/close-icon.svg" alt="close navigation menu icon" class="close-icon">
+                        </div>
+                        <div class="mobileNav-separator mobile-navItem"></div>
+                    </div>
+                    <nav id="header-nav" class="mobile-navItem">
+                        <a href="index.html" class="mobile-navItem">Home</a>
                         <a href="#">Download</a>
                         <a href="#">Nitro</a>
                         <a href="#">Discover</a>
-                        <a href="#">Safety</a>
-                        <a href="#" id="mod-academy" style="display:none">Mod Academy</a>
+                        <a href="#">Safety<b class="mobile-navItem nav-arrow">></b></a>
+                        <a href="#" class="mobile-navItem">Mod Academy<b class="mobile-navItem nav-arrow">></b></a>
                         <a href="#">Support</a>
                         <a href="#">Blog</a>
                         <a href="#">Careers</a>
                     </nav>
+                    <div class="mobile-navItem mobile-navFooter">
+                        <div class="mobile-wrapper mobile-navItem">
+                            <div class="mobileNav-download">
+                                <img src="./assets/img/download.png" alt="download icon">
+                                <a href="#" class="button"> Download for Windows</a>
+                            </div>
+                        </div>
+                    </div>
                 </span>
-                <div>
+                <div id="header-login__button">
                     <a href="#" id="login">Login</a>
                     <img src="./assets/img/hamIcon.svg" alt="hamburguer menu" id="hamburger-menu">
                 </div>
@@ -37,7 +56,7 @@
         <div class="hero-content max-width-desktop">
             <div id="hero-text">
                 <h1>IMAGINE A PLACE...</h1>
-                <p>...where you can belong to a school club, a gaming group, or a worldwide art community. Where
+                <p> ...where you can belong to a school club, a gaming group, or a worldwide art community. Where
                     just
                     you
                     and a handful of friends can spend time together. A place that makes it easy to talk every day
@@ -197,7 +216,7 @@
                 <div class="separator"></div>
                 <div class="wrapper">
                     <a href="index.html">
-                        <img src="./assets/img/discord-logo.png" alt="Discord Logo">
+                        <img src="./assets/img/discord-logo.svg" alt="Discord Logo">
                     </a>
                     <a href="#">Sign Up</a>
                 </div>
