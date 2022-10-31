@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Discord! All about us is here, come and meet us">
     <title>Discord | Your Place to Talk and Hang Out</title>
     <link rel="stylesheet" type="text/css" href="assets/style/style.css">
     <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon"> 
@@ -13,8 +14,9 @@
 </head>
 
 <body>
+    <div id="backdrop"></div>
     <main id="hero">
-        <header class="max-width-desktop">
+        <header class="max-width-desktop z-index">
             <div class="container">
                 <a href="index.html"><img id="discord-logo" src="./assets/img/discord-logo.svg" alt="discord logo"></a>
                 <span class="navContainer">
@@ -33,7 +35,7 @@
                         <a href="#">Nitro</a>
                         <a href="#">Discover</a>
                         <a href="#">Safety<b class="mobile-navItem nav-arrow">></b></a>
-                        <a href="#" class="mobile-navItem">Mod Academy<b class="mobile-navItem nav-arrow">></b></a>
+                        <a data-hide-element href="#" class="mobile-navItem">Mod Academy<b class="mobile-navItem nav-arrow">></b></a>
                         <a href="#">Support</a>
                         <a href="#">Blog</a>
                         <a href="#">Careers</a>
